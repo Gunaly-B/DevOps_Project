@@ -29,7 +29,7 @@ COPY processed.cleveland.data .
 COPY src/ ./src/
 COPY data/ ./data/
 COPY models/ ./models/
-COPY mlruns/ ./mlruns/
+
 
 # Set Python path
 ENV PYTHONPATH=/app
