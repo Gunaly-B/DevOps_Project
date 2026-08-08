@@ -30,3 +30,5 @@ models/*.pkl
 .DS_Store
 .vscode/
 .idea/
+mlflow.db 
+mlruns/ 
