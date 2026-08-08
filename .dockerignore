@@ -1,0 +1,16 @@
+.git
+.gitignore
+.dvc
+.dvcignore
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+tests/
+.env
+.venv/
+venv/
+README.md
+.github
+mlruns/

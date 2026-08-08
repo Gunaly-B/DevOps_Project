@@ -1,0 +1,26 @@
+stages:
+  prepare:
+    cmd: python src/data_loader.py
+    deps:
+      - src/data_loader.py
+      - config.yaml
+      - processed.cleveland.data
+    outs:
+      - data/raw/dataset.csv
+      - data/processed/train.csv
+      - data/processed/test.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - src/preprocessing.py
+      - src/models.py
+      - src/evaluate.py
+      - src/mlflow_utils.py
+      - config.yaml
+      - data/processed/train.csv
+      - data/processed/test.csv
+    outs:
+      - models/best_model.pkl
+      - models/preprocessor.pkl

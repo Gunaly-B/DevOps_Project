@@ -1,0 +1,53 @@
+data:
+  raw_path: "data/raw/dataset.csv"
+  processed_dir: "data/processed"
+  train_path: "data/processed/train.csv"
+  test_path: "data/processed/test.csv"
+  source_data: "processed.cleveland.data"
+  test_size: 0.2
+  random_state: 42
+  target_column: "target"
+  numerical_features:
+    - "age"
+    - "trestbps"
+    - "chol"
+    - "thalach"
+    - "oldpeak"
+  categorical_features:
+    - "sex"
+    - "cp"
+    - "fbs"
+    - "restecg"
+    - "exang"
+    - "slope"
+    - "ca"
+    - "thal"
+
+models:
+  primary_metric: "f1_score"
+  logistic_regression:
+    C: 1.0
+    max_iter: 1000
+    solver: "lbfgs"
+    random_state: 42
+  random_forest:
+    n_estimators: 100
+    max_depth: 5
+    random_state: 42
+  gradient_boosting:
+    n_estimators: 100
+    learning_rate: 0.1
+    max_depth: 3
+    random_state: 42
+
+mlflow:
+  experiment_name: "Heart_Disease_Prediction"
+  tracking_uri: "sqlite:///mlflow.db"
+  registered_model_name: "heart-disease-classifier"
+  alias: "Production"
+  stage: "Production"
+
+artifacts:
+  models_dir: "models"
+  model_path: "models/best_model.pkl"
+  preprocessor_path: "models/preprocessor.pkl"

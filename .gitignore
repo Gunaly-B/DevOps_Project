@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# MLflow
+mlruns/
+.mlruns/
+
+# DVC
+.dvc/cache
+.dvc/tmp
+
+# Data & Models (tracked via DVC)
+data/raw/dataset.csv
+data/processed/*.csv
+models/*.pkl
+
+# OS & IDE
+.DS_Store
+.vscode/
+.idea/
